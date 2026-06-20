@@ -17,7 +17,6 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { ChannelTypeEnum, getChannelIcon } from "@/constants/channels";
-import { ModeToggle } from "@/components/dark-mode-toggle";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef } from "react";
 
@@ -114,7 +113,7 @@ const steps = [
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
 };
 
 const staggerContainer = {
@@ -169,7 +168,6 @@ export default function LandingPage() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <ModeToggle />
             {!isSignedIn ? (
               <>
                 <Button asChild variant="ghost" className="rounded-full px-5 text-sm font-medium hover:bg-muted/50 transition-colors">
