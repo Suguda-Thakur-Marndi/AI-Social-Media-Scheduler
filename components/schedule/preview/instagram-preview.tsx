@@ -26,6 +26,7 @@ export function InstagramPreview({ text, images }: InstagramPreviewProps) {
   useEffect(() => {
     if (!api) return
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrent(api.selectedScrollSnap())
 
     api.on("select", () => {
@@ -55,6 +56,7 @@ export function InstagramPreview({ text, images }: InstagramPreviewProps) {
               <CarouselContent className="h-full! aspect-square ml-0">
                 {images.map((image, index) => (
                   <CarouselItem key={index} className="h-full pl-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={image}
                       alt={`Instagram post ${index + 1}`}

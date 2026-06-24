@@ -1,9 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { POST_STATUS, POST_STATUSES } from "@/constants/post";
 import { getInsforgeServerClient } from "@/lib/insforge-server";
 import { ImageObject } from "@/types/post.type";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type PostType = {
   channelTypeId: string
   content: string

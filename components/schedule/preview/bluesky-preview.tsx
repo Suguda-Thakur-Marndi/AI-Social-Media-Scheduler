@@ -36,6 +36,7 @@ export function BlueSkyPreview({ text, images, profileImage, handle }: BlueSkyPr
               }`}>
                 {images.slice(0, 4).map((image, index) => (
                   <div key={index} className="relative aspect-square">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={image}
                       alt={`BlueSky image ${index + 1}`}

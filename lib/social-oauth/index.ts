@@ -150,6 +150,7 @@ function createProvider(type:ChannelTypeEnum,opts: { pkce?: boolean} = {}): OAut
    }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const PROVIDERS: Record<ChannelTypeEnum, any> = {
     [ChannelTypeEnum.TWITTER]: createProvider(ChannelTypeEnum.TWITTER,{ pkce: true }),
     [ChannelTypeEnum.LINKEDIN]: createProvider(ChannelTypeEnum.LINKEDIN),

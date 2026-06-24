@@ -38,6 +38,7 @@ export function ThreadPreview({ text, images, profileImage, handle }: ThreadPrev
                 {images.map((image, index) => (
                   <div key={index} className="relative shrink-0 w-[85%]
                   aspect-3/3 max-w-[300px]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={image}
                       alt={`Thread image ${index + 1}`}

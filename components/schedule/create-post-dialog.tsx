@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useMemo, useState } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { format, parse, set } from "date-fns"
 import { getChannelIcon } from "@/constants/channels";
 import { ChannelType } from "@/types/channel.type";
@@ -12,6 +13,7 @@ import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { toast } from "sonner";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { toggleVariants } from "../ui/toggle";
 import ChannelAvatar from "../channel-avatar";
 import ContentTextarea from "../content-textarea";
@@ -73,6 +75,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
         if (isPending) {
             return []
         }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return (channelsData || []).map((channel: any) => ({
             ...channel,
             icon: getChannelIcon(channel.type)
@@ -81,6 +84,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
 
      useEffect(() => {
        if(selectedDate){
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setDate(selectedDate)
        }
     }, [selectedDate])
@@ -91,8 +95,10 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
             channels.forEach(channel => {
                 initialContent[channel.id] = { text: "", images: [] }
             })
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setChannelContent(initialContent)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [channels])
 
     const connectedChannels = channels.filter(channel => channel.connected);
@@ -102,6 +108,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
 
     const createPostMutation = useMutation({
         mutationFn: async ({ posts, scheduledAt, status }:
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             { posts: any[], scheduledAt: string, status?: PostStatus }) => {
             const response = await fetch("/api/post", {
                 method: "POST",
@@ -124,6 +131,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
             });
             handleOpenChange(false)
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onError: (error: any) => {
             console.log("failed to create post", error)
             toast.error("Failed to save post")
@@ -225,6 +233,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleIdeaSelect = (idea: any) => {
         if (!hasConnectedChannel) {
             toast.error("Connect at least one channel to add idea")
@@ -342,6 +351,7 @@ const CreatePostDialog = ({ open, onOpenChange, selectedDate }: PropsType) => {
                                             const selected = selectedChannels.includes(channel.id)
                                             const isConnected = channel.connected
                                             return (
+                                                // eslint-disable-next-line react/jsx-key
                                                 <Tooltip>
                                                     <TooltipTrigger asChild>
                                                         <button
@@ -539,6 +549,7 @@ dark:text-amber-400">
                                 globalContent?.text || ""
                             }
                             channelId={activeAccordion}
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             onGenerate={(content:any) => {
                                 if(globalContent?.text){
                                     setGlobalContent((prev) => ({

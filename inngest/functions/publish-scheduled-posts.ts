@@ -184,6 +184,7 @@ async function publishToTwitter({
     content: string;
     handle?: string | null;
     images?: ImageObject[]
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     logger: any;
 }){
     const mediaIds = images?.length ?
@@ -212,6 +213,7 @@ async function publishToTwitter({
     if(!response.ok) throw new Error("Failed to publish to Twitter")
 
     const responseText = await response.text()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let data:any = null;
     try {
         data = JSON.parse(responseText)
@@ -234,6 +236,7 @@ async function uploadImagesToTwitter({
 }: {
     accessToken: string;
     images: ImageObject[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     logger: any;
 }){
    const mediaIds:string[] = [];
@@ -271,10 +274,11 @@ async function uploadImagesToTwitter({
 
         const response = await uploadRes.text();
         logger.info("Twitter media upload response", { response });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let data:any = null;
         try {
             data = JSON.parse(response);
-        } catch (e) {
+        } catch {
             logger.error("Failed to parse Twitter media upload response", { response });
             data = null
         }
@@ -302,6 +306,7 @@ async function publishToLinkedIn({
   text: string
   authorId?: string | null
   images?: { url: string; key: string }[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   logger: any
 }) {
   if (!authorId) throw new Error("Missing LinkedIn provider account id.")
@@ -344,6 +349,7 @@ async function publishToLinkedIn({
   })
 
   const responseText = await response.text()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let data: any = null
   try {
     data = responseText ? JSON.parse(responseText) : null
@@ -465,6 +471,7 @@ async function markPostFailed(postId:string, errorMessage:string){
     if(error) throw error
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function formatLinkedInText(text: string): string {
   return text
 

@@ -4,7 +4,9 @@ import { Suspense, useState } from "react";
 import { useQueryState } from "nuqs"
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Button } from "@/components/ui/button";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { CalendarIcon, LayoutList, Plus } from "lucide-react";
 import ListView from "@/components/schedule/list-view";
@@ -16,6 +18,7 @@ const SchedulePageContent = () => {
   const [activeView, setActiveView] = useQueryState("view", {
     defaultValue: "calendar",
   });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_,setStatus] = useQueryState("status", {
     defaultValue: "",
   })

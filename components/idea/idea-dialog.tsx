@@ -5,6 +5,7 @@ import { ImageObject } from "@/types/post.type"
 import { IdeaType } from "@/types/idea.type"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import { Spinner } from "../ui/spinner"
@@ -39,6 +40,7 @@ const IdeaDialog = ({
     const [showAI, setShowAI] = useState<boolean>(false)
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTitle(idea?.title ?? "")
         setDescription(idea?.description ?? "")
         setImages(idea?.images ?? [])

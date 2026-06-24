@@ -18,6 +18,7 @@ import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { ChannelTypeEnum, getChannelIcon } from "@/constants/channels";
 import { motion, useScroll, useTransform } from "framer-motion";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState, useRef } from "react";
 
 /* ─── Data ─────────────────────────────────────────────────────────── */

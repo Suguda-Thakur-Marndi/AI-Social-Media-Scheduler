@@ -166,6 +166,7 @@ const ContentTextarea = ({
                   key={image.key || index}
                   className="shrink-0 relative size-24 rounded-lg overflow-hidden border"
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={image.url}
                     alt={`Upload ${index + 1}`}

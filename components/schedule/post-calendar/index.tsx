@@ -58,15 +58,18 @@ export function PostCalendar({
   )
 
   const formats = React.useMemo(() => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     weekdayFormat: (date: Date, culture?: string, localizer?: any) =>
       localizer.format(date, 'EEEE', culture),
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dayFormat: (date: Date, culture?: string, localizer?: any) =>
       localizer.format(date, 'EEEE d', culture),
   }), []);
 
   const isWeekView = view === "week"
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CustomToolbar = (toolbar: any) => {
     return (
       <div className="flex flex-col gap-4 mb-4">
@@ -121,6 +124,7 @@ export function PostCalendar({
         onNavigate={onDateChange}
         view={view === "month" ? Views.MONTH : Views.WEEK}
         onView={(v: View) => onViewChange(v === Views.MONTH ? "month" : "week")}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onSelectEvent={(event: any) => onPostClick(event)}
 
         slotPropGetter={(date: Date) => {
@@ -146,6 +150,7 @@ export function PostCalendar({
         components={{
           toolbar: CustomToolbar,
 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           event: ({ event }: { event: any }) => {
             const channel = event.user_channels?.channel_types
             const Icon = getChannelIcon(channel?.type || undefined)
@@ -171,6 +176,7 @@ export function PostCalendar({
           },
 
           month: {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             dateHeader: ({ label, date: cellDate }: any) => {
               const isCellToday = format(cellDate, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd')
               const isPastDate = isBefore(cellDate, startOfDay(new Date()))

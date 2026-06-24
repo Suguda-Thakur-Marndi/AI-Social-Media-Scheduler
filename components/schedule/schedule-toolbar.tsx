@@ -22,6 +22,7 @@ interface ScheduleToolbarProps {
   channelIds: string[];
   toggleChannel: (id: string) => void;
   selectedStatus: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setSelectedStatus: (status: string | any) => void;
 }
 

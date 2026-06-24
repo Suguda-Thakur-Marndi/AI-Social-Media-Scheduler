@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ThumbsUp, MessageCircle, Share2, Globe, MoreHorizontal, Globe2, Share } from "lucide-react"
 
 interface FacebookPreviewProps {
@@ -65,6 +66,7 @@ export function FacebookPreview({ text, images, profileImage, handle }: Facebook
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 mb-4">
             {images.map((image, index) => (
               <div key={index} className="relative shrink-0 w-[90%] aspect-[4/4] max-w-[350px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={image}
                   alt={`Facebook image ${index + 1}`}

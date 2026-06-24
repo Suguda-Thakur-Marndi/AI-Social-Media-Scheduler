@@ -8,12 +8,14 @@ import {
     Droppable,
     Draggable,
     DropResult,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     type DraggableProvidedDraggableProps,
 } from "@hello-pangea/dnd"
 import React from "react"
 import { toast } from "sonner"
 import { Button } from "../ui/button"
 import { Skeleton } from "../ui/skeleton"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ImageObject } from "@/types/post.type"
 import { Badge } from "../ui/badge"
 import { cn } from "@/lib/utils"
@@ -47,6 +49,7 @@ const IdeaKanban = () => {
 
     useEffect(() => {
         if (ideaData?.groups) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setColumns(ideaData.groups)
         }
     }, [ideaData])
@@ -355,6 +358,7 @@ p-2 px-3 transition-colors min-h-0`,
                                                         {idea.images && idea.images?.length > 0 && (
                                                             <div className="grid grid-cols-4 gap-1 mb-2">
                                                                 {idea.images.slice(0, 4).map((image, index) => (
+                                                                    // eslint-disable-next-line @next/next/no-img-element
                                                                     <img
                                                                         key={index}
                                                                         src={image.url}

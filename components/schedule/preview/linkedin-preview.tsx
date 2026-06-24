@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ThumbsUp, MessageCircle, Repeat2, Send, Globe, MoreHorizontal } from "lucide-react"
 
 interface LinkedinPreviewProps {
@@ -68,6 +69,7 @@ export function LinkedinPreview({ text, images, profileImage, handle }: Linkedin
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {images.map((image, index) => (
               <div key={index} className="relative shrink-0 w-full aspect-video">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={image}
                   alt={`LinkedIn post image ${index + 1}`}

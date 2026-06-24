@@ -1,4 +1,5 @@
 import { PostType } from "@/types/post.type";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { keepPreviousData, useMutation, useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useQueryState } from "nuqs";
 import { useState } from "react";
@@ -16,6 +17,7 @@ import { toast } from "sonner";
 import { Spinner } from "../ui/spinner";
 import { cn } from "@/lib/utils";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type TabType = "draft" | "queue" | "published" | "failed";
 
 type GroupPostType = {
@@ -242,6 +244,7 @@ const ListView = ({ setCreatePostModalOpen }: {
                                 <div className="max-h-[165px] overflow-hidden rounded-2xl
                   border bg-muted/40">
                                   {previewImage ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                       src={previewImage}
                                       alt="Post media"

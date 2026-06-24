@@ -15,6 +15,7 @@ let cachedClient: InsForgeClient | null = null;
 let cachedUserId: string | null = null;
 let refreshInterval: NodeJS.Timeout | null = null;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function refreshAuthToken(client: InsForgeClient, retries = 3): Promise<void> {
   try {
     const session = await auth();

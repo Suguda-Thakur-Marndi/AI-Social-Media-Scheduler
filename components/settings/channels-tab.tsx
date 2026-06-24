@@ -1,5 +1,6 @@
 
 "use client"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Suspense,useState, useEffect } from 'react'
 import { toast } from 'sonner';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';

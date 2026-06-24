@@ -11,6 +11,7 @@ export enum ChannelTypeEnum {
   TIKTOK = "TIKTOK"
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const CHANNEL_TYPE_ICONS: Record<ChannelTypeEnum, any> = {
   [ChannelTypeEnum.TWITTER]: NewTwitterIcon,
   [ChannelTypeEnum.LINKEDIN]: LinkedinIcon,

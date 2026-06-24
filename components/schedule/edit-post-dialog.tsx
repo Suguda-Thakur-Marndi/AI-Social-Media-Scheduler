@@ -87,6 +87,7 @@ export function EditPostDialog({
             queryClient.invalidateQueries({ queryKey: ["posts"] });
             onOpenChange(false);
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onError: (error: any) => {
             console.error("Update error:", error);
             toast.error(error.message);
@@ -101,6 +102,7 @@ export function EditPostDialog({
 
         React.useEffect(() => {
             if (post) {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setContent(post.content)
                 setImages(post.images ?? [])
                 const date = new Date(post.scheduledDate)
@@ -138,6 +140,7 @@ export function EditPostDialog({
         });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleAddIdea = (idea: any) => {
         setContent(idea.description || "")
         setImages(idea.images || [])

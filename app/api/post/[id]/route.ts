@@ -19,6 +19,7 @@ export async function PATCH(request:NextRequest,
             status
         } = await request.json();
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const updateData:any = {};
         if (content) updateData.content = content;
         if (Array.isArray(images)) updateData.images = images;

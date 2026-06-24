@@ -68,7 +68,7 @@ export async function POST(request:NextRequest){
 
         const text = result.choices[0]?.message?.content ?? "";
         return NextResponse.json({ content: text})
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Failed to generate post"},{ status:500})
     }
 }

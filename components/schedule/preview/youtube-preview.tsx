@@ -7,6 +7,7 @@ interface YoutubePreviewProps {
   images?: string[]
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function YoutubePreview({ text, images }: YoutubePreviewProps) {
   return (
     <Card className="overflow-hidden border-none! shadow-none bg-transparent">
@@ -15,6 +16,7 @@ export function YoutubePreview({ text, images }: YoutubePreviewProps) {
         <div className="relative aspect-[9/16] w-full max-w-[340px] mx-auto bg-[#1a1a1a] rounded-xl overflow-hidden shadow-2xl">
           { }
           {images && images.length > 0 ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={images[0]}
               alt="Shorts Preview"

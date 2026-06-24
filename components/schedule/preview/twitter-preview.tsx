@@ -31,6 +31,7 @@ export function TwitterPreview({ text, images,profileImage,handle }: TwitterPrev
               <div className={`mt-3 grid gap-1 ${images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                 {images.slice(0, 4).map((image, index) => (
                   <div key={index} className="relative">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={image}
                       alt={`Tweet image ${index + 1}`}

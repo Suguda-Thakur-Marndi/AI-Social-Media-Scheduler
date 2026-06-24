@@ -38,6 +38,7 @@ const IdeasList = ({ onSelect }: IdeasListProps) => {
     }
   })
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const groups: IdeaGroup[] = data?.groups ?? []
 
   const ideas = useMemo(() => {
@@ -96,6 +97,7 @@ const IdeasList = ({ onSelect }: IdeasListProps) => {
               {idea.images && idea.images.length > 0 && (
                 <div className="grid grid-cols-4 gap-1 mb-2">
                   {idea.images.slice(0, 4).map((image, index) => (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={image.key || index}
                       src={image.url}

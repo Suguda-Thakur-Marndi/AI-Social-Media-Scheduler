@@ -1,6 +1,7 @@
 import { createClient } from '@insforge/sdk';
 
 const BASE_URL = process.env.NEXT_PUBLIC_INSFORGE_BASE_URL || process.env.INSFORGE_BASE_URL;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ANON_KEY = process.env.NEXT_PUBLIC_INSFORGE_ANON_KEY || process.env.INSFORGE_ANON_KEY;
 const PROJECT_API_KEY = process.env.INSFORGE_PROJECT_API_KEY || process.env.INSFORGE_API_KEY;
 
